@@ -8,34 +8,38 @@ OIC makes use of the OOTB rest services available from CPQ to create quotes. The
 The endpoint used for creating the quote is as detailed below.
 
 End Point : https://<cpqinstance>/rest/v12/<transactionname>/
+
 Method : POST
+
 Request Paylod : 
+
+
 {
 	"transactionLine": {
 		"items": [
 			{
 				"_part_number": "6324BGSH",
 				"_price_quantity": "1",
-
 				"_price_book_var_name": "UKFLEET21"
 			},
 			{
 				"_part_number": "6324LGSH5FD",
-				"_price_quantity": "1",
-			
+				"_price_quantity": "1",			
 				"_price_book_var_name": "UKFLEET21"
 			}
 		]
-	}
-	
+	}	
 }
 
 ## Update Quote
 Currently it is not possible to update the header attributes of quote during the quote creation process so an additional call has to be made to update these header attributes. The endpoint details are as provided below.
 
 End Point : https://<cpqinstance>/rest/v12/<transactionname>/{transaction_id}/actions/cleanSave_t
+
 Method : POST
+
 Request Paylod : 
+
 {
 	"documents": {
 		"caseNumber": "C-0000000001",
